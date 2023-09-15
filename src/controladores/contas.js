@@ -58,7 +58,7 @@ const modificarConta = (req, res) => {
       .status(400)
       .json({ erro: { mensagem: "Não existe conta com o número informado" } });
   }
-  if (!validarCampos(!nome, cpf, data_nascimento, telefone, email, senha)) {
+  if (!validarCampos(nome, cpf, data_nascimento, telefone, email, senha)) {
     return res
       .status(400)
       .json({ erro: { mensagem: "Todos os campos precisam ser informados" } });
@@ -159,6 +159,19 @@ const mostrarExtrato = (req, res) => {
       },
     });
   }
+  const depositos1 = [];
+  for (let deposito of bancoDeDados.depositos) {
+    if (deposito.numero_conta === numero_conta) {
+      depositos1.push(deposito);
+    } 
+  }
+  const saques1 = []
+  for (let saque of bancoDeDados.saques) {
+    if (saque.numero_conta=== numero_conta) {
+      saques1.push(saque);
+    } 
+  }
+
   const transferenciasEnviadas = [];
   const transferenciasRecebidas = [];
   for (let transferencia of bancoDeDados.transferencias) {
@@ -169,8 +182,8 @@ const mostrarExtrato = (req, res) => {
     }
   }
   res.status(200).json({
-    depositos: bancoDeDados.depositos,
-    saques: bancoDeDados.saques,
+    depositos: depositos1,
+    saques: saques1,
     transferenciasEnviadas,
     transferenciasRecebidas,
   });

@@ -29,7 +29,7 @@ const depositar = (req, res) => {
   contaEncontrada.saldo += valor;
   bancoDeDados.depositos.push({
     data: dataFormatada(),
-    numeroConta: numero_conta,
+    numero_conta: numero_conta,
     valor,
   });
   res.status(204).send();
@@ -71,7 +71,7 @@ const sacar = (req, res) => {
   contaEncontrada.saldo -= valor;
   bancoDeDados.saques.push({
     data: dataFormatada(),
-    numeroConta: numero_conta,
+    numero_conta: numero_conta,
     valor,
   });
   res.status(204).send();
@@ -119,6 +119,13 @@ const transferir = (req, res) => {
     return res.status(400).json({
       erro: {
         mensagem: "Você não tem saldo suficiente para realizar está operação",
+      },
+    });
+  }
+  if (contaOrigemEncontrada  === contaDestinoEncontrada) {
+    return res.status(400).json({
+      erro: {
+        mensagem: "Não é possivel transferir para a mesma conta",
       },
     });
   }
