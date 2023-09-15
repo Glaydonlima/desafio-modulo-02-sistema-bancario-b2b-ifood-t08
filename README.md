@@ -78,6 +78,8 @@ Rotas put e post deve ser enviado requisições JSON no body, utilize uma ferram
     "senha": "12345"
 }
 ```
+##### Exemplo:
+![image](https://user-images.githubusercontent.com/101594250/268389681-50edd4b0-4c05-4be9-a61a-514a0124371f.PNG)
 
 **Modificar Usuario**
 #### `PUT` `/contas/:numeroConta/usuario`
@@ -93,6 +95,8 @@ Rotas put e post deve ser enviado requisições JSON no body, utilize uma ferram
 ```
 *Obs: Alterar parâmetro da URL :numeroConta coloque o numero da conta que deseja alterar o usuário.
 Ex: localhost:3000/contas/1/usuario*
+##### Exemplo:
+![image](https://user-images.githubusercontent.com/101594250/268389814-7c02f5c7-a5a1-42eb-9a95-52dbf3444736.PNG)
 
 **Depositar**
 #### `POST` `/transacoes/depositar`
@@ -102,6 +106,8 @@ Ex: localhost:3000/contas/1/usuario*
 	"valor": 1900
 }
 ```
+##### Exemplo:
+![image](https://user-images.githubusercontent.com/101594250/268389782-79740471-4940-451f-8f94-d0321148cc6d.PNG)
 
 **Sacar**
 #### `POST` `/transacoes/sacar`
@@ -112,6 +118,9 @@ Ex: localhost:3000/contas/1/usuario*
     "senha": "123456"
 }
 ```
+##### Exemplo:
+![image](https://user-images.githubusercontent.com/101594250/268389846-ee635479-17c5-4479-90a0-db8d162aa25d.PNG)
+
 **Transferir**
 #### `POST` `/transacoes/transferir`
 ```
@@ -122,6 +131,9 @@ Ex: localhost:3000/contas/1/usuario*
 	"senha": "123456"
 }
 ```
-### Respostas sempre serão em JSON, como no exemplo abaixo:
-![image]()
+##### Exemplo:
+![image](https://user-images.githubusercontent.com/101594250/268389869-6b4ff4e0-ae09-4612-99d1-32933fe2aa5a.PNG)
+
+## Respostas sempre serão em JSON, como no exemplo de extrato abaixo:
+![image](https://user-images.githubusercontent.com/101594250/268390250-4aa402df-61b9-4c44-8fa1-8ce34dc97a37.PNG)
 
